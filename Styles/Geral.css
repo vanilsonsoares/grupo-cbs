@@ -375,6 +375,20 @@ hr {
 
 
 @media (max-width: 768px) {
+    .SobreSlide {
+        display: flex;
+        flex-direction: column;
+        padding-top: 220px;
+        /* position: absolute; */
+        background: #b6b8bb;
+
+    }
+
+    #apresentacaoSite {
+        display: flex;
+        flex-direction: column;
+    }
+
     .product .old_price {
         margin-bottom: -18px;
         font-size: 0.5em;
