@@ -14,6 +14,11 @@ a:hover {
     text-decoration: none;
 }
 
+.navbar {
+    background-color: #262629;
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 667px) {
     .hidden-mobile {
         display: none !important;
@@ -21,26 +26,19 @@ a:hover {
 }
 
 @media screen and (min-width: 668px) and (max-width: 991px) {
-    .SobreSlide {
-        display: flex;
-        flex-direction: column;
-        padding-top: 220px;
-        /* position: absolute; */
-        background: #b6b8bb;
 
-    }
-
-    #apresentacaoSite {
-        display: flex;
-        flex-direction: column;
-    }
 
     .hidden-tablet {
         display: none !important;
     }
+
+
+
 }
 
-@media screen and (min-width: 992px) {
+
+@media screen and (max-width: 1070px) {
+
     .SobreSlide {
         display: flex;
         flex-direction: column;
@@ -54,6 +52,12 @@ a:hover {
         display: flex;
         flex-direction: column;
     }
+
+}
+
+
+@media screen and (min-width: 992px) {
+
 
     .hidden-desktop {
         display: none !important;
@@ -334,6 +338,13 @@ hr {
     padding-top: 220px;
     /* position: absolute; */
     background: #b6b8bb;
+    /* background: #7d7f81; */
+
+}
+
+
+.SobreSlide container {
+    background: #ecd500;
 
 }
 
