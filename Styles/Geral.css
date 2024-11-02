@@ -21,12 +21,40 @@ a:hover {
 }
 
 @media screen and (min-width: 668px) and (max-width: 991px) {
+    .SobreSlide {
+        display: flex;
+        flex-direction: column;
+        padding-top: 220px;
+        /* position: absolute; */
+        background: #b6b8bb;
+
+    }
+
+    #apresentacaoSite {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hidden-tablet {
         display: none !important;
     }
 }
 
 @media screen and (min-width: 992px) {
+    .SobreSlide {
+        display: flex;
+        flex-direction: column;
+        padding-top: 220px;
+        /* position: absolute; */
+        background: #b6b8bb;
+
+    }
+
+    #apresentacaoSite {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hidden-desktop {
         display: none !important;
     }
