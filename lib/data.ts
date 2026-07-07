@@ -11,16 +11,17 @@
   mapsEmbed: "https://www.google.com/maps/embed?pb="
 };
 
-export const heroImage =
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85";
+export const heroImage = "/obras/apartamento-integrado-01.jpeg";
 
 export const serviceImages = [
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
+  "/obras/apartamento-integrado-01.jpeg",
+  "/obras/sala-led-marcenaria-01.jpeg",
+  "/obras/clinica-consultorio-01.jpeg",
+  "/obras/concretagem-acesso-01.jpeg",
+  "/obras/forro-iluminacao-01.jpeg",
+  "/obras/cozinha-revestimento-iluminacao-01.jpeg",
+  "/obras/banheiro-revestimento-led-01.jpeg",
+  "/obras/clinica-revestimento-madeira-01.jpeg"
 ];
 
 export const services = [
@@ -70,7 +71,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "92 m²",
     deadline: "78 dias",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/apartamento-integrado-02.jpeg",
     services: ["Arquitetura", "Pisos", "Iluminação", "Marcenaria"],
     challenge: "Integrar sala, cozinha e varanda sem perder conforto acústico.",
     solution: "Projeto de layout aberto, iluminação por cenas e marcenaria funcional.",
@@ -83,7 +84,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "140 m²",
     deadline: "64 dias",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/clinica-consultorio-01.jpeg",
     services: ["Drywall", "Elétrica", "Pintura"],
     challenge: "Adequar fluxo de atendimento e normas técnicas.",
     solution: "Setorização inteligente, infraestrutura embutida e materiais laváveis.",
@@ -96,7 +97,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "210 m²",
     deadline: "85 dias",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/sala-led-marcenaria-01.jpeg",
     services: ["Layout corporativo", "Iluminação", "Piso vinílico", "Acústica"],
     challenge: "Criar áreas colaborativas e salas privativas no mesmo pavimento.",
     solution: "Divisórias técnicas, mobiliário sob medida e iluminação segmentada.",
@@ -109,7 +110,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "260 m²",
     deadline: "120 dias",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/concretagem-acesso-01.jpeg",
     services: ["Construção", "Revestimentos", "Paisagismo"],
     challenge: "Modernizar fachada e área social preservando estrutura existente.",
     solution: "Reforços localizados, novos revestimentos e integração com jardim.",
@@ -122,7 +123,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "75 m²",
     deadline: "42 dias",
-    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/forro-iluminacao-01.jpeg",
     services: ["Fachada", "Iluminação", "Marcenaria", "Pintura"],
     challenge: "Valorizar produtos em área compacta.",
     solution: "Expositores planejados, luz focal e circulação fluida.",
@@ -135,7 +136,7 @@ export const projects = [
     location: "São Paulo, SP",
     area: "28 m²",
     deadline: "36 dias",
-    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1100&q=85",
+    image: "/obras/cozinha-planejada-obra-01.jpeg",
     services: ["Hidráulica", "Revestimentos", "Bancadas", "Marcenaria"],
     challenge: "Ganhar armazenamento e melhorar iluminação.",
     solution: "Armários até o teto, bancada em pedra e luz técnica.",
@@ -146,24 +147,40 @@ export const projects = [
 export const comparisons = [
   {
     title: "Sala integrada",
-    before: "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1000&q=80",
-    after: "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=80"
+    before: "/obras/piso-nivelado-apartamento-01.jpeg",
+    after: "/obras/apartamento-integrado-01.jpeg"
   },
   {
     title: "Cozinha planejada",
-    before: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=80",
-    after: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80"
+    before: "/obras/cozinha-planejada-obra-02.jpeg",
+    after: "/obras/cozinha-revestimento-iluminacao-01.jpeg"
   },
   {
     title: "Banheiro premium",
-    before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80",
-    after: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=80"
+    before: "/obras/banheiro-revestimento-led-01.jpeg",
+    after: "/obras/banheiro-revestimento-led-01.jpeg"
   },
   {
     title: "Escritório corporativo",
-    before: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
-    after: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
+    before: "/obras/clinica-revestimento-madeira-01.jpeg",
+    after: "/obras/clinica-consultorio-01.jpeg"
   }
+];
+
+
+export const realWorkMedia = [
+  { title: "Apartamento integrado finalizado", category: "Revestimentos e iluminação", image: "/obras/apartamento-integrado-01.jpeg" },
+  { title: "Sala e cozinha com ilha", category: "Marcenaria, elétrica e acabamento", image: "/obras/apartamento-integrado-02.jpeg" },
+  { title: "Sala com painel e LED", category: "Iluminação e pintura", image: "/obras/sala-led-marcenaria-01.jpeg" },
+  { title: "Cozinha planejada em obra", category: "Bancadas e marcenaria", image: "/obras/cozinha-planejada-obra-01.jpeg" },
+  { title: "Cozinha com revestimento", category: "Revestimentos e elétrica", image: "/obras/cozinha-revestimento-iluminacao-01.jpeg" },
+  { title: "Banheiro com porcelanato", category: "Revestimentos e hidráulica", image: "/obras/banheiro-revestimento-led-01.jpeg" },
+  { title: "Forro com iluminação indireta", category: "Drywall e automação", image: "/obras/forro-iluminacao-01.jpeg" },
+  { title: "Clínica com painel amadeirado", category: "Revestimentos e pintura", image: "/obras/clinica-revestimento-madeira-01.jpeg" },
+  { title: "Consultório finalizado", category: "Comercial e acabamentos", image: "/obras/clinica-consultorio-01.jpeg" },
+  { title: "Base externa concretada", category: "Construção civil", image: "/obras/concretagem-acesso-01.jpeg" },
+  { title: "Preparação de piso externo", category: "Ferragem e concreto", image: "/obras/preparacao-piso-externo-01.jpeg" },
+  { title: "Piso nivelado em apartamento", category: "Contrapiso e nivelamento", image: "/obras/piso-nivelado-apartamento-01.jpeg" }
 ];
 
 export const testimonials = [];

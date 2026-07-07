@@ -1,6 +1,6 @@
 ﻿import Link from "next/link";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { blogPosts, comparisons, faqs, heroImage, projects, services, stages, whatsappUrl } from "@/lib/data";
+import { blogPosts, comparisons, faqs, heroImage, projects, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
 
 const trust = ["Atendimento personalizado", "Orçamento detalhado", "Profissionais especializados", "Acompanhamento de obra", "Garantia dos serviços"];
 const differentials = ["Planejamento completo", "Orçamento transparente", "Equipe especializada", "Cumprimento de prazos", "Materiais de qualidade", "Acompanhamento da obra", "Atendimento personalizado", "Garantia dos serviços"];
@@ -16,7 +16,7 @@ export default function HomePage() {
             <p className="eyebrow text-gold">Construção · reforma · arquitetura</p>
             <h1 className="mt-5 text-5xl font-bold leading-tight md:text-7xl">Transformamos espaços em ambientes extraordinários</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/100">
-              Projetos completos de construção e reforma, do planejamento Ã  entrega final, com qualidade, transparência e atenção a cada detalhe.
+              Projetos completos de construção e reforma, do planejamento à entrega final, com qualidade, transparência e atenção a cada detalhe.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/orcamento" className="rounded-md bg-gold px-6 py-4 font-bold text-graphite shadow-premium">Solicitar orçamento</Link>
@@ -101,10 +101,39 @@ export default function HomePage() {
         </div>
       </section>
 
+
+
+      <section className="section bg-white">
+        <div className="premium-container">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow">Obras reais</p>
+              <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Fotos reais de serviços executados pela nossa equipe</h2>
+              <p className="mt-4 max-w-2xl text-black/60">Registro de etapas e entregas em elétrica, automação, pintura, revestimentos, drywall, iluminação, hidráulica, marcenaria e construção civil.</p>
+            </div>
+            <Link href="/orcamento" className="rounded-md bg-gold px-5 py-3 font-bold text-graphite">Quero um orçamento</Link>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {realWorkMedia.map((item) => (
+              <article key={item.image} className="group overflow-hidden rounded-lg bg-porcelain shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
+                <img src={item.image} alt={item.title} className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="p-4">
+                  <p className="text-xs font-bold uppercase tracking-[.14em] text-copper">{item.category}</p>
+                  <h3 className="mt-2 font-bold text-graphite">{item.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 rounded-lg border border-black/10 bg-porcelain p-5 text-sm text-black/65">
+            Os vídeos enviados estão em formato MOV e são muito grandes para GitHub/Vercel. Para publicar vídeos no site, envie versões compactadas em MP4 com até 50 MB cada ou hospede no YouTube/Vimeo e eu incorporo aqui.
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-porcelain">
         <div className="premium-container">
           <p className="eyebrow">Etapas da obra</p>
-          <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Da primeira conversa Ã  entrega final, tudo com acompanhamento</h2>
+          <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Da primeira conversa à entrega final, tudo com acompanhamento</h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {stages.map((stage, index) => (
               <div key={stage} className="rounded-lg bg-white p-5 shadow-sm">
