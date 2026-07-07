@@ -1,5 +1,16 @@
 ﻿import Link from "next/link";
-import { company, services } from "@/lib/data";
+import { company } from "@/lib/data";
+
+const footerServices = [
+  { label: "Elétrica", href: "/servicos/instalacoes-eletricas" },
+  { label: "Automação", href: "/servicos/automacao-residencial-e-comercial" },
+  { label: "Pintura", href: "/servicos/pintura-residencial-e-comercial" },
+  { label: "Revestimentos", href: "/servicos/pisos-e-revestimentos" },
+  { label: "Drywall e forros", href: "/servicos/drywall-e-forros" },
+  { label: "Hidráulica", href: "/servicos/instalacoes-hidraulicas" },
+  { label: "Iluminação", href: "/servicos/iluminacao" },
+  { label: "Gerenciamento de obras", href: "/servicos/gerenciamento-de-obras" }
+];
 
 export function Footer() {
   return (
@@ -16,11 +27,11 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h2 className="mb-4 font-semibold text-gold">Serviços</h2>
+          <h2 className="mb-4 font-semibold text-gold">Serviços que prestamos</h2>
           <div className="grid gap-2 text-sm text-white/70">
-            {services.slice(0, 6).map((service) => (
-              <Link key={service.slug} href={`/servicos/${service.slug}`} className="hover:text-white">
-                {service.title}
+            {footerServices.map((service) => (
+              <Link key={service.label} href={service.href} className="hover:text-white">
+                {service.label}
               </Link>
             ))}
           </div>
@@ -50,4 +61,3 @@ export function Footer() {
     </footer>
   );
 }
-

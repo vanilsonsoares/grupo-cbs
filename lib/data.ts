@@ -32,6 +32,7 @@ export const services = [
   "Construção residencial",
   "Construção comercial",
   "Instalações elétricas",
+  "Automação residencial e comercial",
   "Instalações hidráulicas",
   "Drywall e forros",
   "Pintura residencial e comercial",
@@ -295,6 +296,8 @@ export const clientTimeline = [
 export function whatsappUrl(message: string) {
   return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+
 
 
 
