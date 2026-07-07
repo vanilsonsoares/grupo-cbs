@@ -15,7 +15,7 @@ export const heroImage = "/obras/apartamento-integrado-01.jpeg";
 
 export const serviceImages = [
   "/obras/apartamento-integrado-01.jpeg",
-  "/obras/sala-led-marcenaria-01.jpeg",
+  "/obras/sala-led-acabamento-01.jpeg",
   "/obras/clinica-consultorio-01.jpeg",
   "/obras/concretagem-acesso-01.jpeg",
   "/obras/forro-iluminacao-01.jpeg",
@@ -38,7 +38,7 @@ export const services = [
   "Drywall e forros",
   "Pintura residencial e comercial",
   "Pisos e revestimentos",
-  "Marcenaria planejada",
+  "Gesso e acabamento",
   "Iluminação",
   "Gerenciamento de obras"
 ].map((title, index) => ({
@@ -72,9 +72,9 @@ export const projects = [
     area: "92 m²",
     deadline: "78 dias",
     image: "/obras/apartamento-integrado-02.jpeg",
-    services: ["Arquitetura", "Pisos", "Iluminação", "Marcenaria"],
+    services: ["Arquitetura", "Pisos", "Iluminação", "Automação"],
     challenge: "Integrar sala, cozinha e varanda sem perder conforto acústico.",
-    solution: "Projeto de layout aberto, iluminação por cenas e marcenaria funcional.",
+    solution: "Projeto de layout aberto, iluminação por cenas e acabamentos funcionais.",
     testimonial: "A obra foi organizada, limpa e entregue com acabamento impecável."
   },
   {
@@ -97,10 +97,10 @@ export const projects = [
     location: "São Paulo, SP",
     area: "210 m²",
     deadline: "85 dias",
-    image: "/obras/sala-led-marcenaria-01.jpeg",
+    image: "/obras/sala-led-acabamento-01.jpeg",
     services: ["Layout corporativo", "Iluminação", "Piso vinílico", "Acústica"],
     challenge: "Criar áreas colaborativas e salas privativas no mesmo pavimento.",
-    solution: "Divisórias técnicas, mobiliário sob medida e iluminação segmentada.",
+    solution: "Divisórias técnicas, acabamento premium e iluminação segmentada.",
     testimonial: "A equipe entendeu nossa operação e entregou um ambiente premium."
   },
   {
@@ -124,9 +124,9 @@ export const projects = [
     area: "75 m²",
     deadline: "42 dias",
     image: "/obras/forro-iluminacao-01.jpeg",
-    services: ["Fachada", "Iluminação", "Marcenaria", "Pintura"],
+    services: ["Fachada", "Iluminação", "Automação", "Pintura"],
     challenge: "Valorizar produtos em área compacta.",
-    solution: "Expositores planejados, luz focal e circulação fluida.",
+    solution: "Luz focal, acabamento bem executado e circulação fluida.",
     testimonial: "A reforma elevou o posicionamento da loja."
   },
   {
@@ -137,9 +137,9 @@ export const projects = [
     area: "28 m²",
     deadline: "36 dias",
     image: "/obras/cozinha-planejada-obra-01.jpeg",
-    services: ["Hidráulica", "Revestimentos", "Bancadas", "Marcenaria"],
+    services: ["Hidráulica", "Revestimentos", "Bancadas", "Elétrica"],
     challenge: "Ganhar armazenamento e melhorar iluminação.",
-    solution: "Armários até o teto, bancada em pedra e luz técnica.",
+    solution: "Bancada em pedra, revestimentos bem alinhados e luz técnica.",
     testimonial: "Ficou bonita, prática e muito fácil de manter."
   }
 ];
@@ -151,7 +151,7 @@ export const comparisons = [
     after: "/obras/apartamento-integrado-01.jpeg"
   },
   {
-    title: "Cozinha planejada",
+    title: "Cozinha com revestimento",
     before: "/obras/cozinha-planejada-obra-02.jpeg",
     after: "/obras/cozinha-revestimento-iluminacao-01.jpeg"
   },
@@ -170,9 +170,9 @@ export const comparisons = [
 
 export const realWorkMedia = [
   { title: "Apartamento integrado finalizado", category: "Revestimentos e iluminação", image: "/obras/apartamento-integrado-01.jpeg" },
-  { title: "Sala e cozinha com ilha", category: "Marcenaria, elétrica e acabamento", image: "/obras/apartamento-integrado-02.jpeg" },
-  { title: "Sala com painel e LED", category: "Iluminação e pintura", image: "/obras/sala-led-marcenaria-01.jpeg" },
-  { title: "Cozinha planejada em obra", category: "Bancadas e marcenaria", image: "/obras/cozinha-planejada-obra-01.jpeg" },
+  { title: "Sala e cozinha com ilha", category: "Elétrica, iluminação e acabamento", image: "/obras/apartamento-integrado-02.jpeg" },
+  { title: "Sala com painel e LED", category: "Iluminação e pintura", image: "/obras/sala-led-acabamento-01.jpeg" },
+  { title: "Cozinha com bancada em obra", category: "Bancadas e revestimentos", image: "/obras/cozinha-planejada-obra-01.jpeg" },
   { title: "Cozinha com revestimento", category: "Revestimentos e elétrica", image: "/obras/cozinha-revestimento-iluminacao-01.jpeg" },
   { title: "Banheiro com porcelanato", category: "Revestimentos e hidráulica", image: "/obras/banheiro-revestimento-led-01.jpeg" },
   { title: "Forro com iluminação indireta", category: "Drywall e automação", image: "/obras/forro-iluminacao-01.jpeg" },
@@ -313,11 +313,4 @@ export const clientTimeline = [
 export function whatsappUrl(message: string) {
   return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
 }
-
-
-
-
-
-
-
 

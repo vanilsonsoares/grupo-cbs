@@ -109,7 +109,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow">Obras reais</p>
               <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Fotos reais de serviços executados pela nossa equipe</h2>
-              <p className="mt-4 max-w-2xl text-black/60">Registro de etapas e entregas em elétrica, automação, pintura, revestimentos, drywall, iluminação, hidráulica, marcenaria e construção civil.</p>
+              <p className="mt-4 max-w-2xl text-black/60">Registro de etapas e entregas em elétrica, automação, pintura, revestimentos, drywall, iluminação, hidráulica e construção civil.</p>
             </div>
             <Link href="/orcamento" className="rounded-md bg-gold px-5 py-3 font-bold text-graphite">Quero um orçamento</Link>
           </div>
@@ -179,5 +179,4 @@ export default function HomePage() {
     </main>
   );
 }
-
 
