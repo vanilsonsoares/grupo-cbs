@@ -1,7 +1,6 @@
-﻿import Link from "next/link";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import Link from "next/link";
 import { ProjectGallery } from "@/components/ProjectGallery";
-import { blogPosts, comparisons, faqs, heroImage, projects, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
+import { blogPosts, faqs, heroImage, projects, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
 
 const trust = ["Atendimento personalizado", "Orçamento detalhado", "Profissionais especializados", "Acompanhamento de obra", "Garantia dos serviços"];
 const differentials = ["Planejamento completo", "Orçamento transparente", "Equipe especializada", "Cumprimento de prazos", "Materiais de qualidade", "Acompanhamento da obra", "Atendimento personalizado", "Garantia dos serviços"];
@@ -67,16 +66,6 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-white">
-        <div className="premium-container">
-          <p className="eyebrow">Antes e depois</p>
-          <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Compare a transformação com uma galeria interativa</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {comparisons.map((item) => <BeforeAfterSlider key={item.title} {...item} />)}
           </div>
         </div>
       </section>
@@ -188,4 +177,3 @@ export default function HomePage() {
     </main>
   );
 }
-
