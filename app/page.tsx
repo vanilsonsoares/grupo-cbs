@@ -1,9 +1,11 @@
 ﻿import Link from "next/link";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { blogPosts, comparisons, faqs, heroImage, projects, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
 
 const trust = ["Atendimento personalizado", "Orçamento detalhado", "Profissionais especializados", "Acompanhamento de obra", "Garantia dos serviços"];
 const differentials = ["Planejamento completo", "Orçamento transparente", "Equipe especializada", "Cumprimento de prazos", "Materiais de qualidade", "Acompanhamento da obra", "Atendimento personalizado", "Garantia dos serviços"];
+const projectFilters = ["Todos", "Apartamentos", "Clínicas", "Escritórios", "Casas", "Lojas", "Cozinhas"];
 
 export default function HomePage() {
   return (
@@ -81,26 +83,33 @@ export default function HomePage() {
 
       <section id="projetos" className="section bg-graphite text-white">
         <div className="premium-container">
-          <p className="eyebrow text-gold">Projetos realizados</p>
-          <h2 className="mt-3 max-w-2xl text-4xl font-bold">Galeria com filtros e páginas detalhadas</h2>
-          <div className="mt-7 flex flex-wrap gap-2">
-            {["Apartamentos", "Casas", "Clínicas", "Escritórios", "Lojas", "Cozinhas", "Banheiros"].map((filter) => <span key={filter} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/75">{filter}</span>)}
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="eyebrow text-gold">Portfólio</p>
+              <h2 className="mt-3 max-w-3xl text-4xl font-bold">Obras executadas com acabamento limpo, prazo acompanhado e atenção aos detalhes</h2>
+              <p className="mt-4 max-w-2xl leading-7 text-white/65">
+                Conheça alguns trabalhos em apartamentos, clínicas, cozinhas, áreas externas e espaços comerciais. Cada projeto reúne os principais serviços aplicados, metragem, prazo e fotos reais da execução.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-center shadow-premium backdrop-blur">
+              <div>
+                <strong className="block text-2xl text-gold">6</strong>
+                <span className="text-xs uppercase tracking-[.12em] text-white/55">projetos</span>
+              </div>
+              <div>
+                <strong className="block text-2xl text-gold">16</strong>
+                <span className="text-xs uppercase tracking-[.12em] text-white/55">serviços</span>
+              </div>
+              <div>
+                <strong className="block text-2xl text-gold">120m²+</strong>
+                <span className="text-xs uppercase tracking-[.12em] text-white/55">obras</span>
+              </div>
+            </div>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <Link key={project.slug} href={`/projetos/${project.slug}`} className="group overflow-hidden rounded-lg bg-white/10">
-                <img src={project.image} alt={project.name} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="p-5">
-                  <p className="text-sm text-gold">{project.category} · {project.area}</p>
-                  <h3 className="mt-1 text-xl font-bold">{project.name}</h3>
-                  <p className="mt-2 text-sm text-white/60">{project.location} · {project.deadline}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+
+          <ProjectGallery projects={projects} filters={projectFilters} />
         </div>
       </section>
-
 
 
       <section className="section bg-white">
