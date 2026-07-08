@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ProjectGallery } from "@/components/ProjectGallery";
-import { blogPosts, faqs, heroImage, projects, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
+import { blogPosts, faqs, heroImage, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
 
 const trust = ["Atendimento personalizado", "Orçamento detalhado", "Profissionais especializados", "Acompanhamento de obra", "Garantia dos serviços"];
 const differentials = ["Planejamento completo", "Orçamento transparente", "Equipe especializada", "Cumprimento de prazos", "Materiais de qualidade", "Acompanhamento da obra", "Atendimento personalizado", "Garantia dos serviços"];
-const projectFilters = ["Todos", "Apartamentos", "Clínicas", "Escritórios", "Casas", "Lojas", "Cozinhas"];
+const projectFilters = ["Todos", "Revestimentos", "Iluminação", "Elétrica", "Drywall", "Hidráulica", "Construção civil", "Pintura"];
 
 export default function HomePage() {
   return (
@@ -22,7 +22,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/orcamento" className="rounded-md bg-gold px-6 py-4 font-bold text-graphite shadow-premium">Solicitar orçamento</Link>
               <Link href="/simule-sua-reforma" className="rounded-md border border-white/40 px-6 py-4 font-bold">Simular minha reforma</Link>
-              <Link href="/projetos/apartamento-jardins" className="rounded-md bg-white/12 px-6 py-4 font-bold">Conhecer projetos</Link>
+              <Link href="#projetos" className="rounded-md bg-white/12 px-6 py-4 font-bold">Ver fotos de obras</Link>
             </div>
             <div className="mt-10 grid gap-3 sm:grid-cols-5">
               {trust.map((item) => <span key={item} className="rounded-md bg-white/12 px-3 py-3 text-center text-xs font-bold backdrop-blur">{item}</span>)}
@@ -72,61 +72,18 @@ export default function HomePage() {
 
       <section id="projetos" className="section bg-graphite text-white">
         <div className="premium-container">
-          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
-            <div>
-              <p className="eyebrow text-gold">Portfólio</p>
-              <h2 className="mt-3 max-w-3xl text-4xl font-bold">Obras executadas com acabamento limpo, prazo acompanhado e atenção aos detalhes</h2>
-              <p className="mt-4 max-w-2xl leading-7 text-white/65">
-                Conheça alguns trabalhos em apartamentos, clínicas, cozinhas, áreas externas e espaços comerciais. Cada projeto reúne os principais serviços aplicados, metragem, prazo e fotos reais da execução.
-              </p>
-            </div>
-            <div className="grid grid-cols-3 gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-center shadow-premium backdrop-blur">
-              <div>
-                <strong className="block text-2xl text-gold">6</strong>
-                <span className="text-xs uppercase tracking-[.12em] text-white/55">projetos</span>
-              </div>
-              <div>
-                <strong className="block text-2xl text-gold">16</strong>
-                <span className="text-xs uppercase tracking-[.12em] text-white/55">serviços</span>
-              </div>
-              <div>
-                <strong className="block text-2xl text-gold">120m²+</strong>
-                <span className="text-xs uppercase tracking-[.12em] text-white/55">obras</span>
-              </div>
-            </div>
+          <div className="max-w-3xl">
+            <p className="eyebrow text-gold">Fotos reais</p>
+            <h2 className="mt-3 text-4xl font-bold">Registros de obras e serviços executados</h2>
+            <p className="mt-4 leading-7 text-white/65">
+              Confira registros reais de etapas de obra, acabamentos e serviços executados em diferentes ambientes residenciais e comerciais.
+            </p>
           </div>
 
-          <ProjectGallery projects={projects} filters={projectFilters} />
+          <ProjectGallery items={realWorkMedia} filters={projectFilters} />
         </div>
       </section>
 
-
-      <section className="section bg-white">
-        <div className="premium-container">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="eyebrow">Obras reais</p>
-              <h2 className="mt-3 max-w-2xl text-4xl font-bold text-graphite">Fotos reais de serviços executados pela nossa equipe</h2>
-              <p className="mt-4 max-w-2xl text-black/60">Registro de etapas e entregas em elétrica, automação, pintura, revestimentos, drywall, iluminação, hidráulica e construção civil.</p>
-            </div>
-            <Link href="/orcamento" className="rounded-md bg-gold px-5 py-3 font-bold text-graphite">Quero um orçamento</Link>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {realWorkMedia.map((item) => (
-              <article key={item.image} className="group overflow-hidden rounded-lg bg-porcelain shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
-                <img src={item.image} alt={item.title} className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="p-4">
-                  <p className="text-xs font-bold uppercase tracking-[.14em] text-copper">{item.category}</p>
-                  <h3 className="mt-2 font-bold text-graphite">{item.title}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="mt-8 rounded-lg border border-black/10 bg-porcelain p-5 text-sm text-black/65">
-            Os vídeos enviados estão em formato MOV e são muito grandes para GitHub/Vercel. Para publicar vídeos no site, envie versões compactadas em MP4 com até 50 MB cada ou hospede no YouTube/Vimeo e eu incorporo aqui.
-          </div>
-        </div>
-      </section>
 
       <section className="section bg-porcelain">
         <div className="premium-container">
