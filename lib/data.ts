@@ -51,7 +51,7 @@ export const services = [
     .replace(/(^-|-$)/g, ""),
   image: serviceImages[index % serviceImages.length],
   summary:
-    "Solução completa com planejamento técnico, orçamento transparente, execução supervisionada e acabamento de alto padrão.",
+    "Avaliação do local, definição do escopo e execução conforme a necessidade da obra.",
   benefits: [
     "Diagnóstico técnico antes da execução",
     "Cronograma com etapas claras",
@@ -60,7 +60,7 @@ export const services = [
     "Garantia e suporte pós-entrega"
   ],
   steps: ["Briefing", "Visita técnica", "Projeto", "Orçamento", "Execução", "Vistoria final"],
-  averageDeadline: `${15 + index * 3} a ${35 + index * 4} dias`
+  averageDeadline: "Sob avaliação técnica"
 }));
 
 export const projects = [
@@ -313,4 +313,3 @@ export const clientTimeline = [
 export function whatsappUrl(message: string) {
   return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
 }
-

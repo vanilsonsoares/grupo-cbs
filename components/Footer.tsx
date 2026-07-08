@@ -23,7 +23,7 @@ export function Footer() {
             </span>
           </div>
           <p className="max-w-sm text-sm leading-6 text-white/70">
-            Construção, reformas, arquitetura e gerenciamento de obras com padrão premium, transparência e acompanhamento técnico.
+            Construção, reformas, elétrica, automação, pintura, revestimentos, drywall e gerenciamento de obras.
           </p>
         </div>
         <div>
@@ -56,7 +56,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/50">
-        © 2026 {company.name}. Conteúdo demonstrativo editável pelo painel administrativo.
+        © 2026 {company.name}.
       </div>
     </footer>
   );

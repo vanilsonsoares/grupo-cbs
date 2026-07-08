@@ -8,7 +8,7 @@ const links = [
   ["Início", "/"],
   ["Sobre nós", "/sobre"],
   ["Serviços", "/servicos/reforma-de-apartamentos"],
-  ["Projetos", "/projetos/apartamento-jardins"],
+  ["Fotos reais", "/#projetos"],
   ["Simule sua reforma", "/simule-sua-reforma"],
   ["Calculadoras", "/calculadoras"],
   ["Blog", "/blog/como-planejar-uma-reforma-sem-estourar-o-orcamento"],
@@ -68,4 +68,3 @@ export function Header() {
     </header>
   );
 }
-
