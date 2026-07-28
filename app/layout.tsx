@@ -1,46 +1,31 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { company } from "@/lib/data";
+
+const display = Manrope({
+  variable: "--font-display",
+  subsets: ["latin"],
+});
+
+const body = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: {
-    default: `${company.name} | Construção e reformas de alto padrão`,
-    template: `%s | ${company.name}`
-  },
+  title: "CBS Construção e Reformas | São Paulo",
   description:
-    "Empresa especializada em construção civil, reformas residenciais e comerciais, arquitetura e gerenciamento de obras.",
-  keywords: [
-    "empresa de reforma",
-    "reforma de apartamento",
-    "reforma residencial",
-    "reforma comercial",
-    "construção e reforma",
-    "pintura residencial",
-    "drywall",
-    "orçamento para reforma"
-  ],
-  openGraph: {
-    title: company.name,
-    description: "Projetos completos de construção e reforma, do planejamento Ã  entrega final.",
-    type: "website",
-    locale: "pt_BR"
-  }
+    "Reformas residenciais e comerciais, elétrica, iluminação, pintura, revestimentos, drywall e gerenciamento de obras em São Paulo.",
+  icons: {
+    icon: "/brand/logo-cbs.png",
+    shortcut: "/brand/logo-cbs.png",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-        <WhatsAppButton />
-      </body>
+      <body className={`${display.variable} ${body.variable}`}>{children}</body>
     </html>
   );
 }
-
-
