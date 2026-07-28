@@ -1,149 +1,248 @@
-﻿import Link from "next/link";
-import { ProjectGallery } from "@/components/ProjectGallery";
-import { company, heroImage, realWorkMedia, services, stages, whatsappUrl } from "@/lib/data";
+const whatsapp =
+  "https://wa.me/5511981353298?text=Olá!%20Vim%20pelo%20site%20da%20CBS%20e%20gostaria%20de%20conversar%20sobre%20uma%20obra.";
 
-const projectFilters = ["Todos", "Revestimentos", "Iluminação", "Elétrica", "Drywall", "Hidráulica", "Construção civil", "Pintura"];
-const mainServices = [
-  "Instalações elétricas",
-  "Automação residencial e comercial",
-  "Pintura residencial e comercial",
-  "Pisos e revestimentos",
-  "Drywall e forros",
-  "Instalações hidráulicas",
-  "Iluminação",
-  "Gerenciamento de obras"
+const services = [
+  {
+    number: "01",
+    title: "Reformas completas",
+    text: "Planejamento e execução de apartamentos, casas e espaços comerciais, do início à entrega.",
+  },
+  {
+    number: "02",
+    title: "Elétrica e iluminação",
+    text: "Instalações, adequações, quadros, automação e projetos de iluminação para cada ambiente.",
+  },
+  {
+    number: "03",
+    title: "Acabamentos",
+    text: "Pintura, porcelanato, revestimentos, drywall, forros e detalhes que definem o resultado.",
+  },
+  {
+    number: "04",
+    title: "Gestão de obra",
+    text: "Cronograma, equipes, materiais e acompanhamento para manter as etapas sob controle.",
+  },
 ];
 
-const practicalPoints = [
-  "Visita técnica para entender o imóvel e o escopo",
-  "Orçamento separado por etapas e serviços",
-  "Execução com acompanhamento e comunicação direta",
-  "Registro fotográfico do andamento quando necessário"
+const projects = [
+  {
+    image: "/obras/apartamento-integrado-01.jpeg",
+    title: "Apartamento integrado",
+    scope: "Reforma completa · Iluminação · Acabamentos",
+    className: "project project--large",
+  },
+  {
+    image: "/obras/clinica-revestimento-madeira-01.jpeg",
+    title: "Clínica",
+    scope: "Revestimentos · Pintura · Marcenaria",
+    className: "project",
+  },
+  {
+    image: "/obras/sala-led-acabamento-01.jpeg",
+    title: "Sala residencial",
+    scope: "Forro · LED · Pintura",
+    className: "project",
+  },
+  {
+    image: "/obras/banheiro-revestimento-led-01.jpeg",
+    title: "Banheiro",
+    scope: "Porcelanato · Hidráulica · Iluminação",
+    className: "project project--wide",
+  },
 ];
 
-const selectedServices = services.filter((service) => mainServices.includes(service.title));
+const steps = [
+  ["01", "Conversa inicial", "Você conta o que precisa e envia as informações básicas do imóvel."],
+  ["02", "Visita técnica", "A equipe avalia o local, medidas, condições e detalhes do serviço."],
+  ["03", "Proposta", "Você recebe o escopo organizado por etapas, com valores e prazos."],
+  ["04", "Execução", "A obra começa com acompanhamento, comunicação e registro do andamento."],
+];
 
-export default function HomePage() {
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
+
+export default function Home() {
   return (
-    <main>
-      <section id="inicio" className="relative min-h-[88vh] overflow-hidden pt-28 text-white">
-        <img src={heroImage} alt="Obra residencial executada pelo Grupo CBS" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-graphite via-graphite/78 to-graphite/20" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-graphite/70 to-transparent" />
-        <div className="premium-container relative flex min-h-[calc(88vh-7rem)] items-center">
-          <div className="max-w-3xl py-20">
-            <p className="eyebrow text-gold">Grupo CBS Construção e Reformas</p>
-            <h1 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">Reformas, elétrica, pintura, revestimentos, drywall e gerenciamento de obra</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">
-              Atendemos obras residenciais e comerciais com orçamento claro, visita técnica e execução organizada. O foco é resolver o serviço com seriedade, acabamento correto e comunicação direta com o cliente.
+    <>
+      <header className="site-header">
+        <a className="brand" href="#inicio" aria-label="CBS Construção e Reformas — início">
+          <img src="/brand/logo-cbs.png" alt="" />
+          <span>
+            <b>CBS</b>
+            <small>Construção e Reformas</small>
+          </span>
+        </a>
+        <nav aria-label="Navegação principal">
+          <a href="#servicos">Serviços</a>
+          <a href="#obras">Obras</a>
+          <a href="#processo">Como funciona</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <a className="header-cta" href={whatsapp} target="_blank" rel="noreferrer">
+          Pedir orçamento <Arrow />
+        </a>
+      </header>
+
+      <main>
+        <section className="hero" id="inicio">
+          <img
+            className="hero__image"
+            src="/obras/apartamento-integrado-01.jpeg"
+            alt="Apartamento integrado reformado pela CBS, com cozinha, sala e iluminação planejada"
+          />
+          <div className="hero__shade" />
+          <div className="hero__content">
+            <p className="eyebrow">Construção e reformas em São Paulo</p>
+            <h1>
+              Obra bem planejada.
+              <br />
+              <em>Acabamento bem executado.</em>
+            </h1>
+            <p className="hero__lead">
+              Reformas residenciais e comerciais com escopo claro, acompanhamento próximo e uma equipe que cuida dos detalhes.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/orcamento" className="rounded-md bg-gold px-6 py-4 font-bold text-graphite shadow-premium">Solicitar orçamento</Link>
-              <a href={whatsappUrl("Olá! Acessei o site do Grupo CBS e gostaria de falar sobre uma obra ou reforma.")} target="_blank" rel="noreferrer" className="rounded-md border border-white/35 px-6 py-4 font-bold text-white">Falar pelo WhatsApp</a>
-              <Link href="#projetos" className="rounded-md bg-white/12 px-6 py-4 font-bold text-white">Ver fotos reais</Link>
-            </div>
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {practicalPoints.map((item) => (
-                <span key={item} className="rounded-md border border-white/12 bg-white/10 px-4 py-3 text-sm text-white/82 backdrop-blur">{item}</span>
-              ))}
+            <div className="hero__actions">
+              <a className="button button--gold" href={whatsapp} target="_blank" rel="noreferrer">
+                Falar sobre minha obra <Arrow />
+              </a>
+              <a className="text-link" href="#obras">
+                Conhecer trabalhos realizados
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="servicos" className="section bg-white">
-        <div className="premium-container">
-          <div className="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
-            <div>
-              <p className="eyebrow">Serviços</p>
-              <h2 className="mt-3 text-4xl font-bold text-graphite">O que a CBS executa</h2>
-              <p className="mt-4 leading-7 text-black/65">
-                A página agora prioriza os serviços reais da empresa. Sem números inventados, sem endereço de obra fictício e sem descrição genérica de portfólio.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {mainServices.map((item) => (
-                <div key={item} className="rounded-md border border-black/10 bg-porcelain px-4 py-3 font-semibold text-graphite">
-                  {item}
-                </div>
-              ))}
-            </div>
+          <div className="hero__facts">
+            <span><b>01</b> Visita técnica</span>
+            <span><b>02</b> Proposta por etapas</span>
+            <span><b>03</b> Acompanhamento da obra</span>
           </div>
+        </section>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {selectedServices.map((service) => (
-              <Link key={service.slug} href={`/servicos/${service.slug}`} className="group overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
-                <img src={service.image} alt={service.title} className="h-44 w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="p-5">
-                  <h3 className="font-bold text-graphite">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-black/60">Avaliação do local, definição do escopo e execução conforme a necessidade da obra.</p>
-                </div>
-              </Link>
+        <section className="intro section">
+          <div>
+            <p className="eyebrow eyebrow--dark">Do projeto à entrega</p>
+            <h2>Uma equipe para coordenar cada parte da sua reforma.</h2>
+          </div>
+          <div className="intro__copy">
+            <p>
+              A CBS reúne execução e gerenciamento para que você não precise lidar com vários fornecedores sem coordenação.
+              Antes de começar, avaliamos o imóvel, alinhamos prioridades e organizamos o serviço.
+            </p>
+            <a className="line-link" href="#servicos">Veja o que executamos <Arrow /></a>
+          </div>
+        </section>
+
+        <section className="services section" id="servicos">
+          <div className="section-heading">
+            <p className="eyebrow eyebrow--dark">Nossos serviços</p>
+            <h2>Execução completa, sem soluções genéricas.</h2>
+          </div>
+          <div className="services__grid">
+            {services.map((service) => (
+              <article className="service" key={service.number}>
+                <span>{service.number}</span>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="projetos" className="section bg-graphite text-white">
-        <div className="premium-container">
-          <div className="grid gap-6 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
-            <div>
-              <p className="eyebrow text-gold">Fotos reais</p>
-              <h2 className="mt-3 text-4xl font-bold">Registros de serviços executados</h2>
-            </div>
-            <p className="leading-7 text-white/65">
-              Esta galeria apresenta registros reais de serviços executados, com identificação objetiva do tipo de trabalho mostrado nas imagens.
-            </p>
+          <div className="services__note">
+            <span>Também executamos</span>
+            <p>Hidráulica · Automação · Drywall e forros · Pintura · Pisos e revestimentos</p>
           </div>
-          <ProjectGallery items={realWorkMedia} filters={projectFilters} />
-        </div>
-      </section>
+        </section>
 
-      <section className="section bg-porcelain">
-        <div className="premium-container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
-          <div>
+        <section className="projects section" id="obras">
+          <div className="section-heading section-heading--row">
+            <div>
+              <p className="eyebrow eyebrow--dark">Obras realizadas</p>
+              <h2>O resultado fala pelo trabalho.</h2>
+            </div>
+            <p>Registros reais de serviços executados pela CBS.</p>
+          </div>
+          <div className="projects__grid">
+            {projects.map((project) => (
+              <article className={project.className} key={project.title}>
+                <img src={project.image} alt={`${project.title} — obra realizada pela CBS`} />
+                <div className="project__caption">
+                  <h3>{project.title}</h3>
+                  <p>{project.scope}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="process section" id="processo">
+          <div className="process__intro">
             <p className="eyebrow">Como funciona</p>
-            <h2 className="mt-3 text-4xl font-bold text-graphite">Processo simples para pedir orçamento</h2>
-            <p className="mt-4 leading-7 text-black/65">
-              O objetivo do site é gerar contato qualificado. O cliente informa o tipo de serviço, envia fotos se tiver e a equipe retorna com orientação para visita ou orçamento inicial.
+            <h2>Clareza antes, durante e depois da obra.</h2>
+            <p>
+              Nada começa no improviso. O serviço é definido com base no local, nas necessidades do cliente e no padrão de acabamento esperado.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/orcamento" className="rounded-md bg-graphite px-5 py-3 font-bold text-white">Preencher orçamento</Link>
-              <a href={whatsappUrl("Olá! Quero enviar fotos e informações para orçamento.")} target="_blank" rel="noreferrer" className="rounded-md border border-black/15 px-5 py-3 font-bold text-graphite">Enviar pelo WhatsApp</a>
-            </div>
           </div>
-          <div className="grid gap-3 md:grid-cols-2">
-            {stages.slice(0, 8).map((stage, index) => (
-              <div key={stage} className="rounded-lg border border-black/10 bg-white p-5 shadow-sm">
-                <span className="text-sm font-bold text-copper">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="mt-2 font-bold text-graphite">{stage}</h3>
-              </div>
+          <div className="process__steps">
+            {steps.map(([number, title, text]) => (
+              <article key={number}>
+                <span>{number}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section bg-white">
-        <div className="premium-container grid gap-8 lg:grid-cols-[1fr_.9fr] lg:items-center">
-          <div>
-            <p className="eyebrow">Contato</p>
-            <h2 className="mt-3 text-4xl font-bold text-graphite">Fale com a CBS sobre sua obra</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-black/65">
-              Informe o serviço desejado, bairro, fotos do local e melhor horário para contato. Com essas informações já é possível orientar o próximo passo.
+        <section className="contact section" id="contato">
+          <div className="contact__visual">
+            <img src="/obras/cozinha-planejada-obra-01.jpeg" alt="Execução de cozinha em andamento pela equipe CBS" />
+            <span>Execução em andamento</span>
+          </div>
+          <div className="contact__content">
+            <p className="eyebrow eyebrow--dark">Vamos conversar</p>
+            <h2>Conte o que você pretende fazer no seu imóvel.</h2>
+            <p>
+              Envie o tipo de serviço, o bairro e, se possível, fotos do local. A equipe responde com a orientação para o próximo passo.
             </p>
+            <a className="button button--navy" href={whatsapp} target="_blank" rel="noreferrer">
+              Chamar a CBS no WhatsApp <Arrow />
+            </a>
+            <dl>
+              <div>
+                <dt>Telefone e WhatsApp</dt>
+                <dd>(11) 98135-3298</dd>
+              </div>
+              <div>
+                <dt>Atendimento</dt>
+                <dd>Segunda a sexta, 8h às 18h</dd>
+              </div>
+            </dl>
           </div>
-          <div className="rounded-lg border border-black/10 bg-porcelain p-6 shadow-premium">
-            <p className="text-sm font-semibold text-black/60">Telefone e WhatsApp</p>
-            <p className="mt-1 text-2xl font-bold text-graphite">{company.phone}</p>
-            <p className="mt-4 text-sm font-semibold text-black/60">Endereço</p>
-            <p className="mt-1 font-bold text-graphite">{company.address}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href={whatsappUrl("Olá! Vim pelo site e gostaria de solicitar um orçamento.")} target="_blank" rel="noreferrer" className="rounded-md bg-gold px-5 py-3 font-bold text-graphite">Chamar no WhatsApp</a>
-              <Link href="/contato" className="rounded-md bg-graphite px-5 py-3 font-bold text-white">Página de contato</Link>
-            </div>
-          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div className="footer__brand">
+          <img src="/brand/logo-cbs.png" alt="Grupo CBS" />
+          <p>Construção e reformas residenciais e comerciais em São Paulo.</p>
         </div>
-      </section>
-    </main>
+        <div>
+          <span>Contato</span>
+          <a href="tel:+5511981353298">(11) 98135-3298</a>
+          <a href="mailto:contato@grupocbs.com.br">contato@grupocbs.com.br</a>
+        </div>
+        <div>
+          <span>Endereço</span>
+          <p>Av. Varsóvia, 850<br />São Paulo — SP</p>
+        </div>
+        <p className="footer__copy">© 2026 Grupo CBS Construção e Reformas.</p>
+      </footer>
+
+      <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Falar com a CBS pelo WhatsApp">
+        <span>WhatsApp</span>
+        <b>↗</b>
+      </a>
+    </>
   );
 }
